@@ -1,4 +1,4 @@
-require_relative '../load.rb'
+require_relative File.join(File.dirname(__FILE__), "../load.rb")
 
 module Gamejam
 	module Roulette
