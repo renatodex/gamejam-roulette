@@ -1,6 +1,4 @@
 require 'json'
-require_relative 'settings'
-Dir[File.dirname(__FILE__) + '/lib/**/*.rb'].each { |file| require_relative file }
 
 if defined?(Motion::Project::Config)
 	Motion::Project::App.setup do |app|
@@ -8,4 +6,7 @@ if defined?(Motion::Project::Config)
 	    app.files.unshift(file)
 	  end
 	end
+else
+	require_relative 'settings'
+	Dir[File.dirname(__FILE__) + '/lib/**/*.rb'].each { |file| require_relative file }
 end

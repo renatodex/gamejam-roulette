@@ -1,6 +1,6 @@
 Gem::Specification.new do |s|
   s.name        = 'gamejam-roulette'
-  s.version     = '1.5.0'
+  s.version     = '1.6.0'
   s.date        = '2010-09-14'
   s.summary     = "GameJam Roulettette API"
   s.description = "A fun Gem to play with GameJam Roulette API"
