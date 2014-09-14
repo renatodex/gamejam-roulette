@@ -1,6 +1,6 @@
 Gem::Specification.new do |s|
   s.name        = 'gamejam-roulette'
-  s.version     = '1.2.0'
+  s.version     = '1.4.0'
   s.date        = '2010-09-14'
   s.summary     = "GameJam Roulettette API"
   s.description = "A fun Gem to play with GameJam Roulette API"
@@ -13,7 +13,9 @@ Gem::Specification.new do |s|
 		"lib/model/slot.rb",
 		"lib/model/rom.rb",
 		"lib/model/parser/TxtParser.rb",
-		"lib/model/parser/BookParser.rb"
+		"lib/model/parser/BookParser.rb",
+		"raw_databases/books.json",
+		"raw_databases/snes.txt"
 	]
   s.homepage    =
     'http://donthavepageyet.com'
