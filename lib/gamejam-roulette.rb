@@ -1,30 +1,11 @@
-#require_relative File.join(File.dirname(__FILE__), "../load.rb")
-
-require 'json'
-
 if defined?(Motion::Project::Config)
 	Motion::Project::App.setup do |app|
-	  Dir.glob(File.join(File.dirname(__FILE__), '/**/*.rb')).each do |file|
-	    app.files.unshift(file)
-	  end
-	end
-else
-	require_relative '../settings'
-	Dir[File.dirname(__FILE__) + '/**/*.rb'].each { |file| require_relative file }
-end
-
-module Gamejam
-	module Roulette
-		class Machine
-			attr_accessor :slots
-			
-			def add_slot(platform, parser)
-				slots << Gamejam::Roulette::Slot.new(platform, parser).pick_rom
-			end
-			
-			def slots
-				@slots ||= []
-			end
+		["/model/rom.rb", "/model/slot.rb", "/model/machine.rb", "/model/parser/BookParser.rb", "/model/parser/TxtParser.rb", "../settings.rb"].each do |f|
+			app.files.unshift(File.join(File.dirname(__FILE__), f))
 		end
 	end
+else
+	require 'json'
+	require_relative '../settings'
+	Dir[File.dirname(__FILE__) + '/**/*.rb'].each { |file| require_relative file }
 end
